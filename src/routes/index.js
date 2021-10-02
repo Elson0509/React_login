@@ -1,10 +1,16 @@
 import React from 'react';
-//import AppRoutes from './app.routes';
+import {useAuth} from '../contexts/auth';
+import AppRoutes from './app.routes';
 import AuthRoutes from './auth.routes';
 
 const Routes = () => {
+    const {signed, loading} = useAuth()
+
+    if(loading)
+        return <div>Loading...</div>
+
     return (
-        <AuthRoutes/>
+        signed ? <AppRoutes/> : <AuthRoutes/>
     );
 };
 

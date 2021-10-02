@@ -1,9 +1,16 @@
-import React from 'react';
+import React  from 'react';
+import {useAuth} from '../../contexts/auth';
 
 const SignIn = () => {
+    const {signed, signIn} = useAuth()
+
+    const handleSignIn = _ => {
+        signIn()
+    }
+
     return (
         <div>
-            <button onClick={()=>console.log('signin')}>Sign In</button>
+            <button onClick={()=>handleSignIn()}>Sign In</button>
         </div>
     );
 };

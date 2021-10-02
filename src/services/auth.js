@@ -1,4 +1,4 @@
-export default function signIn(){
+export const signIn = () => {
     return new Promise(resolve=> {
         setTimeout(()=>{
             resolve({
