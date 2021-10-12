@@ -24,7 +24,7 @@ export const AuthProvider = ({children})=> {
             setUser(res.user)
             api.defaults.headers.Authorization = `Bearer ${res.token}`
             localStorage.setItem('user', JSON.stringify(res.user))
-            localStorage.setItem('token', JSON.stringify(res.token))
+            localStorage.setItem('token', res.token)
         })
         
     }
